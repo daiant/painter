@@ -1,0 +1,25 @@
+{
+  "name": "painter",
+  "version": "1.0.0",
+  "description": "Web App que resume las tendencias de la moda actual, para consultar las novedades desde un solo sitio.",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "node server/index.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/daiant/Painter.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/daiant/Painter/issues"
+  },
+  "homepage": "https://github.com/daiant/Painter#readme",
+  "dependencies": {
+    "express": "^4.18.0",
+    "pg": "^8.7.3"
+  }
+}

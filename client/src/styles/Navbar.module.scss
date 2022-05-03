@@ -1,0 +1,80 @@
+.navbar {
+    border-bottom: 1px solid #F0F0FF;
+    .top {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        gap: 16pt;
+        .logo {
+            height: 128px;
+            img {
+                height: 128px;
+                width: auto;
+            }
+        }
+        .search {
+            border: 2px solid var(--fg-color);
+            font-family: 'Permanent Marker', cursive;
+            height: 32px;
+            padding: 0.25em 1em;
+            flex-basis: 200px;
+            max-width: 300px;
+            flex-grow: 1;
+            line-height: 2;
+            border-radius: 4pt;
+            position: relative;
+            img {
+                cursor: pointer;
+                height: 18pt;
+                position: absolute;
+                right: 12pt;
+                top: 50%;
+                transform: translateY(-50%);
+            }
+        }
+        .user_actions ul{
+            list-style: none;
+            display: flex;
+            gap: 8pt;
+            img {
+                height: 24pt;
+            }
+            
+        }
+    }
+    .categories {
+        font-family: 'Permanent Marker', cursive;
+        max-width: 1000px;
+        margin-inline: auto;
+        ul {
+            justify-content: space-around;
+            display: flex;
+            list-style: none;
+            margin-bottom: 0;
+            li {
+                // flex-grow: 1;
+                padding: 8pt;
+                margin-bottom: 0;
+                position: relative; 
+                font-size: 14pt;
+                &::before {
+                    content: "";
+                    background-color: var(--accent);
+                    position: absolute;
+                    bottom: 12pt;
+                    width: 0;
+                    height: 4pt;
+                    z-index: -1;
+                    transition: width 300ms ease;
+                }
+                &:hover {
+                    &::before {
+                        width: 100%;
+                    }
+                    
+                }
+            }
+        }
+    }
+    
+}
