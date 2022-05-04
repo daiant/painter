@@ -23,9 +23,20 @@ module.exports = {
             let values = [id, max || 9];
             const res = await pool.query(text, values);
 
-            return res.rows[0].url;
+            return res.rows;
         }
         return "";
+    },
+    getUniqueClothes: async function(id) {
+        let text = `SELECT * FROM clothes WHERE clothes_id = $1`;
+        let values = [id];
+        const res = await pool.query(text, values);
+
+        try {
+            return res.rows[0];
+        } catch(e) {
+            return null;
+        }
     },
     getClothes: async function(max) {
         let text = `SELECT * FROM clothes LIMIT $1`;

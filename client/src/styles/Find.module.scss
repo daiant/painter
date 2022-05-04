@@ -1,0 +1,21 @@
+.main {
+    display: flex;
+    padding: 16pt;
+    margin-inline: auto;
+    border: 1px solid red;
+    gap: 18pt;
+
+    .facet_wrapper {
+        width: 200px;
+        flex-basis: 200px;
+        flex-shrink: 0;
+        font-family: var(--normal-font);
+        
+    }
+    .product_wrapper {
+        // display: flex;
+        flex-grow: 1;
+        gap: 16pt;
+        flex-wrap: wrap;
+    }
+}

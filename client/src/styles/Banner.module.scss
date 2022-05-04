@@ -15,12 +15,16 @@
         transform: translate(-30%, -50%);
         color: var(--bg-color);
         h1 {
+            font-family: var(--title-font);
             font-size: 4em;
             margin-bottom: 0;
+            font-weight: normal;
             text-shadow: 1px 1px var(--fg-color);
 
         }
         h2 {
+            font-family: var(--normal-font);
+            font-weight: 500;
             font-size: 2em;
             text-shadow: 1px 1px var(--fg-color);
 

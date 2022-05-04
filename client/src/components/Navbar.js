@@ -6,7 +6,7 @@ export default function Navbar() {
         <main className={styles.navbar}>
             <div className={styles.top}>
                 <div className={styles.logo}>
-                    <img src="/logo.svg" alt="Logo" />
+                    <Link to="/"><img src="/logo.svg" alt="Logo" /></Link>
                 </div>
                 <div className={styles.search}>
                     Buscar ropita
@@ -21,12 +21,54 @@ export default function Navbar() {
             </div>
             <div className={styles.categories}>
                 <ul>
-                    <li><Link to="">Hombre</Link></li>
-                    <li><Link to="">Mujer</Link></li>
-                    <li><Link to="">Niña</Link></li>
-                    <li><Link to="">Niño</Link></li>
-                    <li><Link to="">Zapatos</Link></li>
-                    <li><Link to="">Complementos</Link></li>
+                    <li>
+                        <Link to={{
+                            pathname: "/find",
+                            search: "?gender=1"
+                        }}>
+                            Hombre
+                        </Link>
+                    </li>
+                    <li>
+                        <Link to={{
+                            pathname: "/find",
+                            search: "?gender=5"
+                        }}>
+                            Mujer
+                        </Link>
+                    </li>
+                    <li>
+                        <Link to={{
+                            pathname: "/find",
+                            search: "?gender=3"
+                        }}>
+                            Niña
+                        </Link>
+                    </li>
+                    <li>
+                        <Link to={{
+                            pathname: "/find",
+                            search: "?gender=4"
+                        }}>
+                            Niño
+                        </Link>
+                    </li>
+                    <li>
+                        <Link to={{
+                            pathname: "/find",
+                            search: "?category=1"
+                        }}>
+                            Zapatos
+                        </Link>
+                    </li>
+                    <li>
+                        <Link to={{
+                            pathname: "/find",
+                            search: "?category=2"
+                        }}>
+                            Complementos
+                        </Link>
+                    </li>
                 </ul>
             </div>
 

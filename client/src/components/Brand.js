@@ -7,7 +7,7 @@ export default function Brand(props) {
     const [loading, setLoading] = React.useState(true);
     React.useEffect(() => {
         axios.post('/clothes', {
-            brand: props.name.toLowerCase(),
+            brand: props.id,
             max: 10
         }, {
             headers: {
@@ -26,9 +26,6 @@ export default function Brand(props) {
                 <h2 className={styles.title}>{props.name}</h2>
             </div>
             <div className={styles.products}>
-                {loading && <>
-                    Loading...
-                </>}
                 {!loading && <>
                     <ul>
                     {clothes.map((item, index) => {

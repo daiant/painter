@@ -14,5 +14,16 @@ module.exports =  {
         } catch(e) {
             return;
         }
+    },
+    getBrandName: async function(id) {
+        let text = `SELECT name FROM brands WHERE brand_id = $1`;
+        let values = [id];
+        const res = await pool.query(text, values);
+        try {
+            return res.rows[0].name;
+        } catch(e) {
+            return;
+        }
+
     }
 }

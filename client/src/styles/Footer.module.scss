@@ -3,11 +3,18 @@
     padding: 16pt;
     display: flex;
     justify-content: space-around;
+    font-family: var(--normal-font);
     .links {
         ul {
             list-style: none;
-            li a {
-                color: var(--bg-color);
+            li {
+                margin: 2pt;
+                a {
+                    color: var(--bg-color);
+                    &:hover {
+                        text-decoration: underline;
+                    }
+                }
             }
         }
     }    

@@ -14,7 +14,7 @@
         }
         .search {
             border: 2px solid var(--fg-color);
-            font-family: 'Permanent Marker', cursive;
+            font-family: var(--title-font);
             height: 32px;
             padding: 0.25em 1em;
             flex-basis: 200px;
@@ -43,33 +43,35 @@
         }
     }
     .categories {
-        font-family: 'Permanent Marker', cursive;
+        font-family: var(--title-font);
         max-width: 1000px;
         margin-inline: auto;
         ul {
+            padding: 0;
             justify-content: space-around;
             display: flex;
             list-style: none;
-            margin-bottom: 0;
+            margin: 0;
             li {
                 // flex-grow: 1;
-                padding: 8pt;
                 margin-bottom: 0;
                 position: relative; 
                 font-size: 14pt;
+                
                 &::before {
                     content: "";
                     background-color: var(--accent);
                     position: absolute;
-                    bottom: 12pt;
+                    bottom: 3pt;
                     width: 0;
+                    left: 0;
                     height: 4pt;
                     z-index: -1;
                     transition: width 300ms ease;
                 }
                 &:hover {
                     &::before {
-                        width: 100%;
+                        width: 110%;
                     }
                     
                 }

@@ -5,6 +5,8 @@ import Login from './components/Login';
 import Layout from './Layout';
 import AuthContext from './context/AuthProvider';
 import Home from './pages/Home';
+import ProductPage from './pages/ProductPage';
+import Find from './pages/Find';
 function App() {
 
   return (
@@ -14,7 +16,8 @@ function App() {
         <Route element={<Layout />}>
           <Route path='/' element={<Home />} />
           <Route path='/login' element={<Login />} />
-          <Route path='/protected' element={<RequireAuth><ProtectedPage /></RequireAuth>} />
+          <Route path='/product/:clothesId' element={<ProductPage />} />
+          <Route path='/find' element={<Find />} />
         </Route>
       </Routes>
       </Router>

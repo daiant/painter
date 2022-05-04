@@ -10,7 +10,7 @@ export default function Home() {
     const [loading, setLoading] = React.useState(true);
 
     React.useEffect(() =>  {
-        axios.post("/clothes", {max: 6}, {
+        axios.post("/clothes", {max: 8}, {
             headers: {
                 Accept: "application/json",
                 "Content-Type": "application/json;charset=UTF-8",
@@ -29,6 +29,7 @@ export default function Home() {
         <Brand 
             src="/springfield.jpg"
             name="Springfield"
+            id="1"
         />
         <section className="most-wanted">
             <h2>Los más vendidos</h2>

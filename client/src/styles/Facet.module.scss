@@ -1,0 +1,14 @@
+.checkbox_wrapper {
+    .title_facet {
+        border-bottom: 1px solid var(--fg-color);
+        position: relative;
+        font-weight: 500;
+        &::after {
+            content: "+";
+            position: absolute;
+            right: 8pt;
+            transform: rotate(45deg);
+            transform-origin: center center;
+        }
+    }
+}

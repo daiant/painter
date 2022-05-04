@@ -1,4 +1,8 @@
 .main {
+    max-width: 300px;
+    min-width: 200px;
+    display: inline-block;
+    margin-left: 16pt;
     .img {
         position: relative;
         width: 300px;
@@ -7,8 +11,9 @@
             height: 450px;
             width: 300px;
         }
-        
         .fav {
+            opacity: 0;
+            transition: opacity 100ms linear;
             position: absolute;
             top: 16pt;
             right: 16pt;
@@ -32,18 +37,24 @@
                 transform: rotate(0);
             }
             .fav {
-                display: none;
+                opacity: 0;
             }
         }
     }
     .info {
         text-align: center;
+        font-family: var(--normal-font);
         .sale {
             font-weight: normal;
             text-decoration: line-through;
         }
         .price {
-            font-weight: bold;
+            font-weight: 600;
+        }
+    }
+    &:hover {
+        .fav {
+            opacity: 1;
         }
     }
 }
