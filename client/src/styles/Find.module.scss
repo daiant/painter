@@ -14,8 +14,31 @@
     }
     .product_wrapper {
         // display: flex;
+        margin-left: 32pt;
+        display: grid;
+        grid-template-columns: repeat(5, 1fr);
         flex-grow: 1;
         gap: 16pt;
         flex-wrap: wrap;
+    }
+}
+.idle_box {
+    text-align: center;
+    width: 100%;
+    height: calc(100vh - 128px);
+    position: relative;
+    span {
+        position: absolute;
+        top: 50%; 
+        left: 50%;
+        transform: translate(-50%, -50%);
+        display: flex;
+        flex-direction: column;
+        gap: 16pt;
+        opacity: 0.3;
+        img {
+            width: 200px;
+            height: autop;
+        }
     }
 }

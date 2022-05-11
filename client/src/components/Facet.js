@@ -5,6 +5,7 @@ import styles from '../styles/Facet.module.scss';
 
 export default function Facet(props) {
     const [names, setNames] = React.useState({});
+    const [visibility, setVisibility] = React.useState(true);
     const [searchParams, setSearchParams] = useSearchParams();
     const locale = {
         category: "Categoría",
@@ -50,11 +51,16 @@ export default function Facet(props) {
             return s.substring(0,1).toUpperCase() + s.substring(1);
         }
     }
+    function toggleVisibility() {
+        setVisibility(!visibility);
+        console.log("eie")
+        console.log(visibility);
+    }
     return <> 
-        <div className={styles.checkbox_wrapper}>
+        <div className={styles.checkbox_wrapper} onClick={toggleVisibility}>
             <p className={styles.title_facet}>{title(props.id)}</p>
             {Object.keys(props.data).map((item) => {
-                return <div className={styles.checkbox} key={item}>
+            return <div className={visibility ? styles.checkbox : `${styles.checkbox} ${styles.hidden}`} key={item}>
                     <label>
                         <input type="checkbox" value={`${props.id}_${item}`} onChange={changeSelection} checked={searchParams.getAll(props.id).includes(item)}/>
                         {`${names[item]} (${props.data[item]})`}

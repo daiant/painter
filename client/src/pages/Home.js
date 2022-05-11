@@ -31,12 +31,12 @@ export default function Home() {
             name="Springfield"
             id="1"
         />
-        <section className="most-wanted">
+        <section className="most-wanted container">
             <h2>Los más vendidos</h2>
             <div className="product-banner">
                 {!loading && <>
                     {clothes.map((item, index) => {
-                    return <div key={index}><Product clothes={item} /></div>
+                    return <div key={index} className="product-wrapper"><Product clothes={item} /></div>
                 })} 
                 </>}
             </div>

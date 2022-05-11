@@ -43,7 +43,10 @@ export default function Find() {
     }
     
     return <>
-        {data.length <= 0 && <div>Nada que ver aquí, por ahora...</div>}
+        {data.length <= 0 && <div className={styles.idle_box}>
+            <span>Nada que ver aquí, por ahora...
+            <img src="/logo.svg" /></span>
+            </div>}
         {data.length > 0 && <div className={styles.main}>
             <div className={styles.facet_wrapper}>
                 <p>Lista de filtros</p>

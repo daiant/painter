@@ -1,16 +1,19 @@
 .most-wanted {
   text-align: center;
-  max-width: calc(300px * 4 + 16pt * 3);
+  // max-width: calc(300px * 4 + 16pt * 3);
   margin-inline: auto;
   h2 {
     font-family: var(--title-font);
     font-weight: normal;
   }
   .product-banner {
-
-    display: flex;
+    display: grid;
     gap: 16pt;
     flex-wrap: wrap;
+    grid-template-columns: repeat(4, 300px);
     justify-content: center;
+    .product-wrapper {
+      max-width: 300px;
+    }
   }
 }

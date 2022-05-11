@@ -1,6 +1,9 @@
 .checkbox_wrapper {
+    margin: 8pt 0;
     .title_facet {
         border-bottom: 1px solid var(--fg-color);
+        cursor: pointer;
+        margin: 0;
         position: relative;
         font-weight: 500;
         &::after {
@@ -9,6 +12,22 @@
             right: 8pt;
             transform: rotate(45deg);
             transform-origin: center center;
+        }
+    }
+    .checkbox {
+        display: flex;
+        align-items: center;
+        transition: height 100ms ease, margin-top 100ms ease;
+        label {
+            cursor: pointer;
+        }
+        &.hidden {
+            height: 0;
+            opacity: 0;
+            margin-top: 0 !important;
+        }
+        &:first-of-type {
+            margin-top: 8pt;
         }
     }
 }
