@@ -6,16 +6,16 @@ export default function Navbar() {
         <main className={styles.navbar}>
             <div className={styles.top}>
                 <div className={styles.logo}>
-                    <Link to="/"><img src="/logo.svg" alt="Logo" /></Link>
+                    <Link to="/painter"><img src="/painter/logo.svg" alt="Logo" /></Link>
                 </div>
                 <div className={styles.search}>
-                    Buscar ropita
-                    <img src="/search.png" />
+                    <label>Buscar ropita</label>
+                    <img src="/painter/search.png" />
                 </div>
                 <div className={styles.user_actions}>
                     <ul>
-                        <li><Link to=""><img src="/heart.png" alt="icono de un corazón"></img></Link></li>
-                        <li><Link to=""><img src="/user.png" alt="icono de un usuario"></img></Link></li>
+                        <li><Link to=""><img src="/painter/heart.png" alt="icono de un corazón"></img></Link></li>
+                        <li><Link to=""><img src="/painter/user.png" alt="icono de un usuario"></img></Link></li>
                     </ul>
                 </div>
             </div>
@@ -23,7 +23,7 @@ export default function Navbar() {
                 <ul>
                     <li>
                         <Link to={{
-                            pathname: "/find",
+                            pathname: "/painter/find",
                             search: "?gender=1"
                         }}>
                             Hombre
@@ -31,7 +31,7 @@ export default function Navbar() {
                     </li>
                     <li>
                         <Link to={{
-                            pathname: "/find",
+                            pathname: "/painter/find",
                             search: "?gender=5"
                         }}>
                             Mujer
@@ -39,7 +39,7 @@ export default function Navbar() {
                     </li>
                     <li>
                         <Link to={{
-                            pathname: "/find",
+                            pathname: "/painter/find",
                             search: "?gender=3"
                         }}>
                             Niña
@@ -47,7 +47,7 @@ export default function Navbar() {
                     </li>
                     <li>
                         <Link to={{
-                            pathname: "/find",
+                            pathname: "/painter/find",
                             search: "?gender=4"
                         }}>
                             Niño
@@ -55,7 +55,7 @@ export default function Navbar() {
                     </li>
                     <li>
                         <Link to={{
-                            pathname: "/find",
+                            pathname: "/painter/find",
                             search: "?category=1"
                         }}>
                             Zapatos
@@ -63,7 +63,7 @@ export default function Navbar() {
                     </li>
                     <li>
                         <Link to={{
-                            pathname: "/find",
+                            pathname: "/painter/find",
                             search: "?category=2"
                         }}>
                             Complementos

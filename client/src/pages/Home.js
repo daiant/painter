@@ -22,12 +22,12 @@ export default function Home() {
     }, [])
     return <>
         <Banner
-            src="/banner.jpg"
+            src="/painter/banner.jpg"
             title="Painter"
             subtitle="Encuentra toda la ropa de todas las marcas"
         />
         <Brand 
-            src="/springfield.jpg"
+            src="/painter/springfield.jpg"
             name="Springfield"
             id="1"
         />

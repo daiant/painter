@@ -20,7 +20,7 @@ export default function Brand(props) {
         })
     }, [])
     return <>
-        <div className={styles.main + " container"}>
+        <div className={styles.main}>
             <div className={styles.banner}>
                 <img src={props.src} />
                 <h2 className={styles.title}>{props.name}</h2>

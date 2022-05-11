@@ -7,7 +7,7 @@
     font-weight: normal;
   }
   .product-banner {
-    display: grid;
+    display: flex;
     gap: 16pt;
     flex-wrap: wrap;
     grid-template-columns: repeat(4, 300px);
