@@ -3,19 +3,19 @@
     padding: 16pt;
     margin-inline: auto;
     gap: 18pt;
-
+    justify-content: space-around;
     .facet_wrapper {
         width: 200px;
         flex-basis: 200px;
         flex-shrink: 0;
         font-family: var(--normal-font);
-        
     }
     .product_wrapper {
         // display: flex;
         margin-left: 32pt;
-        display: grid;
-        grid-template-columns: repeat(5, 1fr);
+        // display: grid;
+        display: flex;
+        // grid-template-columns: repeat(5, 1fr);
         flex-grow: 1;
         gap: 16pt;
         flex-wrap: wrap;
@@ -38,6 +38,17 @@
         img {
             width: 200px;
             height: autop;
+        }
+    }
+}
+@media (max-width: 1000px) {
+    .main {
+        flex-wrap: wrap;
+        .facet_wrapper {
+            flex-grow: 1;
+        }
+        .product_wrapper {
+            justify-content: center;
         }
     }
 }

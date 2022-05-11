@@ -8,6 +8,7 @@ body {
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
   background-color: var(--bg-color);
+  -webkit-tap-highlight-color: transparent;
 }
 :root {
   --bg-color: #f8f8ff;

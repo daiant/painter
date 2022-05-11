@@ -124,3 +124,21 @@
         }
     }
 }
+@media (max-width: 1000px) {
+    .product_wrapper {
+        flex-wrap: wrap;
+        justify-content: center;
+        .img_wrapper {
+            flex-direction: column-reverse;
+            .preview_img {
+                img {
+                    max-width: 100%;
+                }
+            }
+            .thumbnails {
+                flex-direction: row;
+            }
+        }
+    }
+
+}

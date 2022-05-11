@@ -57,25 +57,27 @@
             li {
                 flex: 1;
                 margin-bottom: 0;
-                position: relative; 
-                font-size: 14pt;
-                
-                &::before {
-                    content: "";
-                    background-color: var(--accent);
-                    position: absolute;
-                    bottom: 3pt;
-                    width: 0;
-                    left: 0;
-                    height: 4pt;
-                    z-index: -1;
-                    transition: width 300ms ease;
-                }
-                &:hover {
+                font-size: 14pt;                
+                a {
+                    position: relative; 
+
                     &::before {
-                        width: 110%;
+                        content: "";
+                        background-color: var(--accent);
+                        position: absolute;
+                        bottom: 3pt;
+                        width: 0;
+                        left: 0;
+                        height: 4pt;
+                        z-index: -1;
+                        transition: width 300ms ease;
                     }
-                    
+                    &:hover {
+                        &::before {
+                            width: 110%;
+                        }
+                        
+                    }
                 }
             }
         }
