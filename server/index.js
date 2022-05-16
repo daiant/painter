@@ -72,7 +72,7 @@ app.get('/clothes/:id', async(req, res) => {
 app.post('/query', async (req, res) => {
     let request = req.body.query;
     var text = `SELECT * FROM clothes WHERE name LIKE $1`;
-    var values = ["'%" + request + "%'"]
+    var values = ["%" + request + "%"]
 
     const response = await pool.query(text, values);
     console.log(values); 
