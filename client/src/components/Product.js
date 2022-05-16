@@ -14,12 +14,12 @@ export default function Product(props) {
         })
     }, [])
     return <>
-        <Link to={`/product/${props.clothes.clothes_id}`}>
+        <Link to={`/painter/product/${props.clothes.clothes_id}`}>
             <div className={styles.main}>
                 <div className={loading ? `${styles.loading} ${styles.img}` : styles.img}>
-                    <img src={loading ? "/loading.png" : img}></img>
+                    <img src={loading ? "/painter/loading.png" : img}></img>
                     <div className={styles.fav}>
-                        <img src='/heart.png'></img>
+                        <img src='/painter/heart.png'></img>
                     </div>
                 </div>
                 <div className={styles.info}>

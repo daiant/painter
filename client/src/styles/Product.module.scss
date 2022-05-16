@@ -5,11 +5,11 @@
     // margin-left: 16pt;
     .img {
         position: relative;
-        width: 300px;
+        width: fit-content;
         
         img {
             height: 450px;
-            width: 300px;
+            width: auto;
         }
         .fav {
             opacity: 0;
@@ -24,7 +24,7 @@
         }
         &.loading {
             height: 450px;
-            width: 300px;
+            width: auto;
             text-align: center;
             img {
                 position: relative;
@@ -42,6 +42,7 @@
         }
     }
     .info {
+        width: 300px;
         text-align: center;
         font-family: var(--normal-font);
         .sale {
@@ -66,4 +67,21 @@
         transform: rotate(-360deg);
     }
     
+}
+@media (max-width: 768px) {
+    .main {
+        .img {
+            img {
+                height: 300px !important;
+            }
+            &.loading {
+                height: 300px !important;
+                width: 200px !important;
+            }
+        }
+        .info {
+            text-align: start;
+            width: 200px;
+        }
+    }
 }

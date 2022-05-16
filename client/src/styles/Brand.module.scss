@@ -14,12 +14,12 @@
         .title {
             font-family: var(--title-font);
             position: absolute;
-            font-size: 3em;
+            font-size: 2.5em;
             padding: 0;
             margin: 0;
             top: 40%;
             left: 50%;
-            transform: translate(-40%, -50%);
+            transform: translate(-50%, -40%);
             color: var(--bg-color);
             text-shadow: 1px 1px var(--fg-color);
         }
@@ -35,4 +35,17 @@
             width: 80vw;
         }
     }
+}
+@media (max-width: 768px) {
+    .main {
+        max-width: 100%;
+        padding: 8pt;
+        .products {
+            ul {
+                padding: 0 8pt;
+                width: 90vw;
+            }
+        }
+    }
+    
 }

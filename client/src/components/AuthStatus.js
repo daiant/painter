@@ -12,7 +12,7 @@ export default function AuthStatus() {
     }
     function signout() {
         auth.setAuth({})
-        navigate("/")
+        navigate("/painter")
     }
     return (
         <p>

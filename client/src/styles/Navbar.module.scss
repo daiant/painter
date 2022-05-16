@@ -34,6 +34,7 @@
         }
         .user_actions ul{
             list-style: none;
+            padding: 0;
             display: flex;
             gap: 8pt;
             img {
@@ -48,33 +49,54 @@
         margin-inline: auto;
         ul {
             padding: 0;
-            justify-content: space-around;
             display: flex;
             list-style: none;
-            margin: 0;
+            margin: 0 16pt;
+            overflow-x: auto;
+            gap: 8pt;
             li {
-                // flex-grow: 1;
+                flex: 1;
                 margin-bottom: 0;
-                position: relative; 
-                font-size: 14pt;
-                
-                &::before {
-                    content: "";
-                    background-color: var(--accent);
-                    position: absolute;
-                    bottom: 3pt;
-                    width: 0;
-                    left: 0;
-                    height: 4pt;
-                    z-index: -1;
-                    transition: width 300ms ease;
-                }
-                &:hover {
+                font-size: 14pt;                
+                a {
+                    position: relative; 
+
                     &::before {
-                        width: 110%;
+                        content: "";
+                        background-color: var(--accent);
+                        position: absolute;
+                        bottom: 3pt;
+                        width: 0;
+                        left: 0;
+                        height: 4pt;
+                        z-index: -1;
+                        transition: width 300ms ease;
                     }
-                    
+                    &:hover {
+                        &::before {
+                            width: 110%;
+                        }
+                        
+                    }
                 }
+            }
+        }
+    }   
+}
+@media (max-width: 500px) {
+    .top {
+
+        .search {
+            border: none !important;
+            width: 24pt !important;
+            flex-basis: 24pt !important;
+            flex-grow: 0 !important;
+            label {
+                display: none;
+            }
+            img {
+                height: 24pt !important;
+                right: 0 !important;
             }
         }
     }

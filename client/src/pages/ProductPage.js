@@ -65,7 +65,7 @@ export default function ProductPage() {
                         </div>
                         <div className={styles.buy_action}>
                             <div className={`${styles.buy} ${styles.button}`}>Comprar</div>
-                            <div className={`${styles.fav} ${styles.button}`}>Añadir a favoritos <img src="/heart.png"></img></div>
+                            <div className={`${styles.fav} ${styles.button}`}>Añadir a favoritos <img src="/painter/heart.png"></img></div>
                         </div>
                         <p>{product.description}</p>
                        

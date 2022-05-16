@@ -14,10 +14,10 @@ function App() {
     <Router>
       <Routes>
         <Route element={<Layout />}>
-          <Route path='/' element={<Home />} />
-          <Route path='/login' element={<Login />} />
-          <Route path='/product/:clothesId' element={<ProductPage />} />
-          <Route path='/find' element={<Find />} />
+          <Route path='/painter/' element={<Home />} />
+          <Route path='/painter/login' element={<Login />} />
+          <Route path='/painter/product/:clothesId' element={<ProductPage />} />
+          <Route path='/painter/find' element={<Find />} />
         </Route>
       </Routes>
       </Router>
@@ -33,7 +33,7 @@ function RequireAuth({children}) {
   let location = useLocation();
   console.log(auth.auth)
   if(!auth.auth.accessToken) {
-    return <Navigate to="/login" state={{from: location}} replace />
+    return <Navigate to="/painter/login" state={{from: location}} replace />
   }
   return children;
 }
