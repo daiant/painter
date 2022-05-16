@@ -18,11 +18,10 @@ export default function Product(props) {
            setLoading(false);
         });
         if(Object.keys(auth.auth).length > 0) {
-            axios.post(`/favorite`, JSON.stringify({
+            axios.post(`/favorite`, {
                 clothes_id: props.clothes.clothes_id,
                 user_id: auth.auth.user_id
-            })).then(({data}) => {
-                console.log(data);
+            }).then(({data}) => {
                 setFavorite(data.favorite)
             });
         }
@@ -34,10 +33,14 @@ export default function Product(props) {
         if(Object.keys(auth.auth).length <= 0) {
             navigate('/painter/login', {replace: false, });
         } else {
-            console.log("añadir a favoritos");
+            axios.post("/set-favorite", {
+                clothes_id: props.clothes.clothes_id,
+                user_id: auth.auth.user_id,
+                action: !favorite
+            }).then(({data}) => setFavorite(!favorite))
         }
     }
-    console.log(favorite);
+
     return <>
         <Link to={`/painter/product/${props.clothes.clothes_id}`}>
             <div className={styles.main}>

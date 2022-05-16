@@ -5,7 +5,7 @@ const { getBrandName } = require('./brands');
 const { getGenderName } = require('./gender');
 const { getCategoryName } = require('./category');
 const { pool } = require('./db');
-const  { getUser, getFavoritesFromUser, getIsClothesFavorite } = require('./user');
+const  { getUser, getFavoritesFromUser, getIsClothesFavorite, setFavorite } = require('./user');
 const fs = require('fs');
 const https = require('https');
 
@@ -33,11 +33,15 @@ app.post('/auth', async (req, res) => {
 });
 app.get('/favorites/:id', async(req, res) => {
     const clothes = await getFavoritesFromUser(req.params.id);
-    console.log("estoy aqui")
+
     return res.json({
         clothes
     })
 });
+app.post('/set-favorite', async(req, res) => {
+    const response = await setFavorite(req.body.clothes_id, req.body.user_id, action);
+    res.send("done");
+})
 app.post('/favorite', async(req, res) => {
     const isFavorite = await getIsClothesFavorite(req.body.clothes_id, req.body.user_id);
     console.log(isFavorite);
