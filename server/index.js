@@ -18,7 +18,10 @@ app.use(express.json());
 app.use(cors({credentials: true, origin: 'http://localhost:3000'})); 
 app.use(cors());
 app.post('/auth', (req, res) => {
+
     console.log("ieie");
+    res.setHeader('Access-Control-Allow-Origin', 'http://localhost:3000');
+
     res.json({
         roles: [1],
         accessToken: 1
