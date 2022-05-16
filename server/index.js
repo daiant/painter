@@ -5,7 +5,7 @@ const { getBrandName } = require('./brands');
 const { getGenderName } = require('./gender');
 const { getCategoryName } = require('./category');
 const { pool } = require('./db');
-const  { getUser } = require('./auth');
+const  { getUser, getFavoritesFromUser } = require('./user');
 const fs = require('fs');
 const https = require('https');
 
@@ -26,12 +26,20 @@ app.post('/auth', async (req, res) => {
     if(user !== undefined && user !== {}) {
         res.json({
             roles: [1],
-            accessToken: 1
+            accessToken: 1,
+            user_id: user.user_id
         });
     } else {
         res.status(401).send({msg: "Unauthorized"});
     }
 });
+app.get('/favorites/:id', async(req, res) => {
+    const clothes = await getFavoritesFromUser(req.params.id);
+
+    return res.json({
+        clothes
+    })
+})
 app.get('/clothes/:id', async(req, res) => {
     const clothes = await getUniqueClothes(req.params.id);
     const brand = await getBrandName(clothes.brand_id);
