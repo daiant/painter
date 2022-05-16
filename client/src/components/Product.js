@@ -21,7 +21,10 @@ export default function Product(props) {
             axios.post(`/favorite`, JSON.stringify({
                 clothes_id: props.clothes.clothes_id,
                 user_id: auth.auth.user_id
-            })).then(({data}) => setFavorite(data.favorite));
+            })).then(({data}) => {
+                console.log(data);
+                setFavorite(data.favorite)
+            });
         }
     }, []);
     function clickMe(e) {
@@ -33,15 +36,15 @@ export default function Product(props) {
         } else {
             console.log("añadir a favoritos");
         }
-        console.log(auth.auth);
     }
+    console.log(favorite);
     return <>
         <Link to={`/painter/product/${props.clothes.clothes_id}`}>
             <div className={styles.main}>
                 <div className={loading ? `${styles.loading} ${styles.img}` : styles.img}>
                     <img src={loading ? "/painter/loading.png" : img}></img>
                     <div className={styles.fav} onClick={(e) => clickMe(e)}>
-                        <img src='/painter/heart.png'></img>
+                        <img src={favorite ? '/painter/heart_filled.png' : '/painter/heart.png'}></img>
                     </div>
                 </div>
                 <div className={styles.info}>
