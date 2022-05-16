@@ -31,6 +31,30 @@
         transform: translateY(-50%);
         cursor: pointer
     }
+    .results {
+        position: absolute;
+        background-color: var(--bg-color);
+        width: calc(100%);        
+        list-style: none;
+        z-index: 10;
+        padding-left: 0;
+        .result {
+            background-color: var(--bg-color);
+            padding: 0.5em 1em;
+            border-bottom: 0px;
+            border-right: 1px;
+            border-left: 1px;
+            border-top: 0;
+            border-color: #c4c4c4;
+            border-style: solid;
+            &:first-of-type {
+                border-top: 1px solid #c4c4c4;
+            }
+            &:last-of-type {
+                border-bottom: 1px solid #c4c4c4;
+            }
+        }
+    }
 }
 @media (max-width: 500px) {
     .wrapper {

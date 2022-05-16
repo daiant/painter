@@ -55,23 +55,27 @@ export default function Login() {
     }
     return (
         <>
-        <section>
+        <section style={{margin: '0 auto', maxWidth: '400px'}}>
             <p ref={errRef} className={errMsg ? "errmsg" : "offscreen"} aria-live="assertive">
                 {errMsg}
             </p>
             <h1>Sign In</h1>
             <p>Pista: admin - admin</p>
-            <form onSubmit={handleSubmit}>
-                <label htmlFor='username'>Username:</label>
-                <input 
-                    type="text" id="username" ref={userRef} autoComplete="off" 
-                    onChange={(e) => setUser(e.target.value)} value={user} required
-                />
-                <label htmlFor='password'>Password</label>
-                <input 
-                    type="password" id="password"
-                    onChange={(e) => setPwd(e.target.value)} value={pwd} required
-                />
+            <form onSubmit={handleSubmit} style={{display: 'flex', flexDirection:'column', maxWidth: '400px', gap: '8pt', margin: '0 auto'}}>
+                <div>
+                    <label style={{display: 'block'}} htmlFor='username'>Username:</label>
+                    <input 
+                        type="text" id="username" ref={userRef} autoComplete="off" 
+                        onChange={(e) => setUser(e.target.value)} value={user} required
+                    />
+                </div>
+                <div>
+                    <label style={{display: 'block'}} htmlFor='password'>Password</label>
+                    <input 
+                        type="password" id="password"
+                        onChange={(e) => setPwd(e.target.value)} value={pwd} required
+                    />
+                </div>
                 <button>Sign in</button>
             </form>
         </section>    
