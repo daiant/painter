@@ -7,6 +7,7 @@ import AuthContext from './context/AuthProvider';
 import Home from './pages/Home';
 import ProductPage from './pages/ProductPage';
 import Find from './pages/Find';
+import User from './pages/User';
 function App() {
 
   return (
@@ -18,16 +19,18 @@ function App() {
           <Route path='/painter/login' element={<Login />} />
           <Route path='/painter/product/:clothesId' element={<ProductPage />} />
           <Route path='/painter/find' element={<Find />} />
+          <Route path='/painter/user/' element={
+            <RequireAuth>
+              <User />
+            </RequireAuth>
+            }
+          />
         </Route>
       </Routes>
       </Router>
     </>  
   );
 }
-function ProtectedPage() {
-  return <h2>ProtectedPage</h2>
-}
-
 function RequireAuth({children}) {
   let auth = useContext(AuthContext);
   let location = useLocation();
