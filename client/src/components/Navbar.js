@@ -14,8 +14,8 @@ export default function Navbar() {
                 </div>
                 <div className={styles.user_actions}>
                     <ul>
-                        <li><Link to="/painter"><img src="/painter/heart.png" alt="icono de un corazón"></img></Link></li>
-                        <li><Link to="/painter"><img src="/painter/user.png" alt="icono de un usuario"></img></Link></li>
+                        <li><Link to="/painter" title='Favoritos'><img src="/painter/heart.png" alt="icono de un corazón"></img></Link></li>
+                        <li><Link to="/painter/user" title='Perfil'><img src="/painter/user.png" alt="icono de un usuario"></img></Link></li>
                     </ul>
                 </div>
             </div>
