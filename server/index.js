@@ -20,9 +20,7 @@ app.use(cors({credentials: true, origin: 'http://localhost:3000'}));
 app.use(cors());
 app.post('/auth', async (req, res) => {
     res.setHeader('Access-Control-Allow-Origin', 'http://localhost:3000');
-
     const user = await getUser(req.body.user, req.body.pwd);
-    console.log(user);
     if(user !== undefined && user !== {}) {
         res.json({
             roles: [1],
@@ -35,7 +33,7 @@ app.post('/auth', async (req, res) => {
 });
 app.get('/favorites/:id', async(req, res) => {
     const clothes = await getFavoritesFromUser(req.params.id);
-
+    console.log("estoy aqui")
     return res.json({
         clothes
     })

@@ -33,7 +33,8 @@ export default function Login() {
                 });
             const accessToken = response?.data?.accessToken;
             const roles = response?.data?.roles;
-            setAuth({user, pwd, roles, accessToken});
+            const user_id = response?.data?.user_id;
+            setAuth({user_id, user, pwd, roles, accessToken});
             setUser('')
             setPwd('');
             navigate(from, {replace: true})

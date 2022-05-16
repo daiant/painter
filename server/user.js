@@ -20,6 +20,7 @@ module.exports = {
         try {
             return res.rows;
         } catch(e) {
+            console.log(e);
             return {};
         }
     }
