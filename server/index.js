@@ -5,7 +5,7 @@ const { getBrandName } = require('./brands');
 const { getGenderName } = require('./gender');
 const { getCategoryName } = require('./category');
 const { pool } = require('./db');
-const  { getUser, getFavoritesFromUser } = require('./user');
+const  { getUser, getFavoritesFromUser, getIsClothesFavorite } = require('./user');
 const fs = require('fs');
 const https = require('https');
 
