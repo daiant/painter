@@ -16,11 +16,11 @@ const app = express();
 https.createServer({key: fs.readFileSync('my_cert.key'), cert: fs.readFileSync('my_cert.crt')}, app).listen(PORT, function() {console.log('https ready');});
 
 app.use(express.json());
-app.use(cors({credentials: true, origin: 'http://localhost:3000'})); 
+app.use(cors({credentials: true, origin: '*'})); 
 app.use(cors());
 
 app.post('/auth', async (req, res) => {
-    res.setHeader('Access-Control-Allow-Origin', 'http://localhost:3000');
+    res.setHeader('Access-Control-Allow-Origin', 'https://daiant.github.io');
     const user = await getUser(req.body.user, req.body.pwd);
     if(user !== undefined && user !== {}) {
         res.json({
