@@ -8,7 +8,6 @@ const { pool } = require('./db');
 const  { getUser } = require('./auth');
 const fs = require('fs');
 const https = require('https');
-const { getUser } = require('./auth');
 
 const PORT = process.env.PORT || 8443;
 
