@@ -48,9 +48,7 @@ app.post('/set-favorite', async(req, res) => {
 
 app.post('/favorite', async(req, res) => {
     const isFavorite = await getIsClothesFavorite(req.body.clothes_id, req.body.user_id);
-    console.log(isFavorite);
-    console.log(req.body.clothes_id);
-    console.log(req.body.user_id);
+    
     return res.json({
         favorite: isFavorite == 1
     })
@@ -75,9 +73,6 @@ app.post('/query', async (req, res) => {
     var values = ["%" + request + "%"]
 
     const response = await pool.query(text, values);
-    console.log(values); 
-    console.log(text)
-    console.log(response.rows);
     return res.json({
         clothes: response.rows
     })
