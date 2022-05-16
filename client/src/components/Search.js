@@ -15,7 +15,7 @@ export default function Search() {
         axios.post('/query', {
             query
         }).then(({data}) => {
-            console.log(data);
+            console.log(data.clothes);
         })
     }
     return <>        
