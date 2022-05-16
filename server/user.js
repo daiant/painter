@@ -23,5 +23,13 @@ module.exports = {
             console.log(e);
             return {};
         }
+    },
+    getIsClothesFavorite: async function(clothes_id, user_id) {
+        const text = `SELECT * from favorites WHERE clothes_id = $1 AND user_id = $2`
+        const values = [clothes_id, user_id];
+
+        const res = await pool.query(text, values);
+
+        return res.rows.length;
     }
 }

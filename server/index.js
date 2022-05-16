@@ -37,6 +37,13 @@ app.get('/favorites/:id', async(req, res) => {
     return res.json({
         clothes
     })
+});
+app.post('/favorite', async(req, res) => {
+    const isFavorite = await getIsClothesFavorite(clothes_id, user_id);
+
+    return res.json({
+        favorite: isFavorite == 1
+    })
 })
 app.get('/clothes/:id', async(req, res) => {
     const clothes = await getUniqueClothes(req.params.id);

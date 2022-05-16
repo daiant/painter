@@ -14,7 +14,7 @@ export default function Login() {
     const [errMsg, setErrMsg] = useState('');
     const navigate = useNavigate();
     let location = useLocation();
-    let from = location.state?.from?.pathname || "/";
+    let from = location.state?.from?.pathname || "/painter";
     useEffect(() => {
         userRef.current.focus();
     }, []);
