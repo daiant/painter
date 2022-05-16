@@ -19,6 +19,7 @@ app.use(express.json());
 app.use(cors({credentials: true, origin: 'http://localhost:3000'})); 
 app.use(cors());
 app.post('/auth', (req, res) => {
+    console.log(req.body.user, req.body.pwd)
     const user = getUser(req.body.user, req.body.pwd);
     console.log(user);
 
