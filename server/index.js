@@ -19,16 +19,18 @@ app.use(express.json());
 app.use(cors({credentials: true, origin: 'http://localhost:3000'})); 
 app.use(cors());
 app.post('/auth', async (req, res) => {
-    console.log(req.body.user, req.body.pwd)
-    const user = await getUser(req.body.user, req.body.pwd);
-    console.log(user);
-
     res.setHeader('Access-Control-Allow-Origin', 'http://localhost:3000');
 
-    res.json({
-        roles: [1],
-        accessToken: 1
-    });
+    const user = await getUser(req.body.user, req.body.pwd);
+    console.log(user);
+    if(user !== undefined && user !== {}) {
+        res.json({
+            roles: [1],
+            accessToken: 1
+        });
+    } else {
+        res.status(401).send({msg: "Unauthorized"});
+    }
 });
 app.get('/clothes/:id', async(req, res) => {
     const clothes = await getUniqueClothes(req.params.id);
