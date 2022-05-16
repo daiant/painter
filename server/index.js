@@ -75,7 +75,7 @@ app.post('/query', async (req, res) => {
     var values = ["'% " + request + " %'"]
 
     const response = await pool.query(text, values);
-    console.log(response);
+    console.log(response.rows);
     return res.json({
         clothes: response.rows
     })
