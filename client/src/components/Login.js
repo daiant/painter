@@ -28,7 +28,8 @@ export default function Login() {
                 JSON.stringify({user, pwd}), 
                 {
                     headers: {'Content-Type': 'application/json'},
-                    withCredentials: true
+                    withCredentials: true, 
+                    
                 });
             console.log(JSON.stringify(response?.data));
             const accessToken = response?.data?.accessToken;
