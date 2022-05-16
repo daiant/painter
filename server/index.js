@@ -74,9 +74,9 @@ app.post('/query', async (req, res) => {
     var text = 'SELECT * FROM clothes WHERE name LIKE %$1%';
     var values = [request]
 
-    const res = await pool.query(text, values);
+    const response = await pool.query(text, values);
     return res.json({
-        clothes: res.rows
+        clothes: response.rows
     })
 })
 app.post('/clothes', async (req, res) => {
