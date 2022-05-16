@@ -22,7 +22,9 @@ app.use(cors());
 app.post('/auth', (req, res) => {
     const user = getUser(req.body.user, req.body.pwd);
     console.log(user);
+
     res.setHeader('Access-Control-Allow-Origin', 'http://localhost:3000');
+
     res.json({
         roles: [1],
         accessToken: 1
