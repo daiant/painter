@@ -5,15 +5,19 @@ const { getBrandName } = require('./brands');
 const { getGenderName } = require('./gender');
 const { getCategoryName } = require('./category');
 const { pool } = require('./db');
+const fs = require('fs');
+const https = require('https');
 
-const PORT = process.env.PORT || 3001;
+const PORT = process.env.PORT || 8443;
 
 const app = express();
+
+https.createServer({key: fs.readFileSync('my_cert.key'), cert: fs.readFileSync('my_cert.crt')}, app).listen(PORT, function() {console.log('https ready');});
+
 app.use(express.json());
-app.use(cors({credentials: true, origin: 'http://localhost:3000'})); 
+// app.use(cors({credentials: true, origin: 'http://localhost:3000'})); 
+app.use(cors());
 app.post('/auth', (req, res) => {
-    console.log("Todo bien");
-    console.log(req.body);
     res.json({
         roles: [1],
         accessToken: 1
@@ -91,6 +95,4 @@ app.get('/gender/:id', async(req, res) => {
         name: await getGenderName(req.params.id)
     });
 });
-app.listen(PORT, () => {
-    console.log(`Server listening on port ${PORT}`);
-});
+app.get('/', async(req,res) => { return res.json({msg: "hola mundo"}); });
