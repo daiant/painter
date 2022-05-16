@@ -39,7 +39,7 @@ app.get('/favorites/:id', async(req, res) => {
     })
 });
 app.post('/set-favorite', async(req, res) => {
-    const response = await setFavorite(req.body.clothes_id, req.body.user_id, action);
+    const response = await setFavorite(req.body.clothes_id, req.body.user_id, req.body.action);
     res.send("done");
 })
 app.post('/favorite', async(req, res) => {
