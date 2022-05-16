@@ -8,6 +8,7 @@ import Home from './pages/Home';
 import ProductPage from './pages/ProductPage';
 import Find from './pages/Find';
 import User from './pages/User';
+import Favorites from './pages/Favorites';
 function App() {
 
   return (
@@ -19,6 +20,11 @@ function App() {
           <Route path='/painter/login' element={<Login />} />
           <Route path='/painter/product/:clothesId' element={<ProductPage />} />
           <Route path='/painter/find' element={<Find />} />
+          <Route path='/painter/favorites' element={
+            <RequireAuth>
+              <Favorites />
+            </RequireAuth>
+          } />
           <Route path='/painter/user/' element={
             <RequireAuth>
               <User />
@@ -34,7 +40,6 @@ function App() {
 function RequireAuth({children}) {
   let auth = useContext(AuthContext);
   let location = useLocation();
-  console.log(auth.auth)
   if(!auth.auth.accessToken) {
     return <Navigate to="/painter/login" state={{from: location}} replace />
   }

@@ -5,8 +5,10 @@ const { getBrandName } = require('./brands');
 const { getGenderName } = require('./gender');
 const { getCategoryName } = require('./category');
 const { pool } = require('./db');
+const  { getUser } = require('./auth');
 const fs = require('fs');
 const https = require('https');
+const { getUser } = require('./auth');
 
 const PORT = process.env.PORT || 8443;
 
@@ -18,6 +20,8 @@ app.use(express.json());
 app.use(cors({credentials: true, origin: 'http://localhost:3000'})); 
 app.use(cors());
 app.post('/auth', (req, res) => {
+    const user = getUser(req.body.user, req.body.pwd);
+    console.log(user);
     res.setHeader('Access-Control-Allow-Origin', 'http://localhost:3000');
     res.json({
         roles: [1],
