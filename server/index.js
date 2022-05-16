@@ -16,8 +16,8 @@ const app = express();
 https.createServer({key: fs.readFileSync('my_cert.key'), cert: fs.readFileSync('my_cert.crt')}, app).listen(PORT, function() {console.log('https ready');});
 
 app.use(express.json());
-app.use(cors({credentials: true, origin: '*'})); 
-app.use(cors());
+app.use(cors({credentials: true, origin: 'https://daiant.github.io'})); 
+// app.use(cors());
 
 app.post('/auth', async (req, res) => {
     res.setHeader('Access-Control-Allow-Origin', 'https://daiant.github.io');
