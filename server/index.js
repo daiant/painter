@@ -18,6 +18,7 @@ https.createServer({key: fs.readFileSync('my_cert.key'), cert: fs.readFileSync('
 app.use(express.json());
 app.use(cors({credentials: true, origin: 'http://localhost:3000'})); 
 app.use(cors());
+
 app.post('/auth', async (req, res) => {
     res.setHeader('Access-Control-Allow-Origin', 'http://localhost:3000');
     const user = await getUser(req.body.user, req.body.pwd);
@@ -31,6 +32,7 @@ app.post('/auth', async (req, res) => {
         res.status(401).send({msg: "Unauthorized"});
     }
 });
+
 app.get('/favorites/:id', async(req, res) => {
     const clothes = await getFavoritesFromUser(req.params.id);
 
@@ -38,10 +40,12 @@ app.get('/favorites/:id', async(req, res) => {
         clothes
     })
 });
+
 app.post('/set-favorite', async(req, res) => {
     const response = await setFavorite(req.body.clothes_id, req.body.user_id, req.body.action);
     res.send("done");
 })
+
 app.post('/favorite', async(req, res) => {
     const isFavorite = await getIsClothesFavorite(req.body.clothes_id, req.body.user_id);
     console.log(isFavorite);
@@ -51,6 +55,7 @@ app.post('/favorite', async(req, res) => {
         favorite: isFavorite == 1
     })
 })
+
 app.get('/clothes/:id', async(req, res) => {
     const clothes = await getUniqueClothes(req.params.id);
     const brand = await getBrandName(clothes.brand_id);
@@ -64,6 +69,16 @@ app.get('/clothes/:id', async(req, res) => {
         category: category
     });
 });
+app.post('/query', async (req, res) => {
+    let request = req.body.query;
+    var text = 'SELECT * FROM clothes WHERE name LIKE %$1%';
+    var values = [request]
+
+    const res = pool.query(text, values);
+    return res.json({
+        clothes: res.rows
+    })
+})
 app.post('/clothes', async (req, res) => {
     let request = req.body;
     var query = "SELECT * FROM clothes";
@@ -97,14 +112,12 @@ app.post('/clothes', async (req, res) => {
         clothes: response.rows
     })
 });
+
 app.get('/clothes-img/:id', async(req, res) => {
     return res.json({
         images: await getImgFromClothes(req.params.id, 10)
     });
 })
-app.get('/api', (req, res) => {
-    return res.json({"message" : "Hello from server!"});
-});
 
 app.get('/category/:id', async(req, res) => {
     return res.json({

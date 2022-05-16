@@ -1,5 +1,6 @@
 import { Link } from 'react-router-dom';
 import styles from '../styles/Navbar.module.scss';
+import Search from './Search';
 
 export default function Navbar() {
     return <>
@@ -8,10 +9,7 @@ export default function Navbar() {
                 <div className={styles.logo}>
                     <Link to="/painter"><img src="/painter/logo.svg" alt="Logo" /></Link>
                 </div>
-                <div className={styles.search}>
-                    <label>Buscar ropita</label>
-                    <img src="/painter/search.png" />
-                </div>
+                <Search />
                 <div className={styles.user_actions}>
                     <ul>
                         <li><Link to="/painter/favorites" title='Favoritos'><img src="/painter/heart.png" alt="icono de un corazón"></img></Link></li>

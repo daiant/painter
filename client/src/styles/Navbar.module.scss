@@ -5,31 +5,12 @@
         align-items: center;
         justify-content: center;
         gap: 16pt;
+        padding-inline: 1em;
         .logo {
             height: 100px;
             img {
                 height: 100px;
                 width: auto;
-            }
-        }
-        .search {
-            border: 2px solid var(--fg-color);
-            font-family: var(--title-font);
-            height: 32px;
-            padding: 0.25em 1em;
-            flex-basis: 200px;
-            max-width: 300px;
-            flex-grow: 1;
-            line-height: 2;
-            border-radius: 4pt;
-            position: relative;
-            img {
-                cursor: pointer;
-                height: 18pt;
-                position: absolute;
-                right: 12pt;
-                top: 50%;
-                transform: translateY(-50%);
             }
         }
         .user_actions ul{
@@ -52,7 +33,6 @@
             display: flex;
             list-style: none;
             margin: 0 16pt;
-            overflow-x: auto;
             gap: 8pt;
             li {
                 flex: 1;
@@ -86,19 +66,12 @@
 @media (max-width: 500px) {
     .top {
 
-        .search {
-            border: none !important;
-            width: 24pt !important;
-            flex-basis: 24pt !important;
-            flex-grow: 0 !important;
-            label {
-                display: none;
-            }
-            img {
-                height: 24pt !important;
-                right: 0 !important;
-            }
+        .logo {
+            margin-right: auto;
         }
+    }
+    .categories ul {
+        overflow-x: auto;
     }
     
 }
