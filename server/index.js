@@ -18,9 +18,9 @@ https.createServer({key: fs.readFileSync('my_cert.key'), cert: fs.readFileSync('
 app.use(express.json());
 app.use(cors({credentials: true, origin: 'http://localhost:3000'})); 
 app.use(cors());
-app.post('/auth', (req, res) => {
+app.post('/auth', async (req, res) => {
     console.log(req.body.user, req.body.pwd)
-    const user = getUser(req.body.user, req.body.pwd);
+    const user = await getUser(req.body.user, req.body.pwd);
     console.log(user);
 
     res.setHeader('Access-Control-Allow-Origin', 'http://localhost:3000');
