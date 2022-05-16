@@ -35,11 +35,11 @@ module.exports = {
     setFavorite: async function(clothes_id, user_id, action) {
         var text = "";
         if(action) {
-            text = `INSERT INTO favorites (clothes_id, user_id)`;
+            text = `INSERT INTO favorites (clothes_id, user_id) VALUES ($1, $2)`;
         } else {
             text = `DELETE FROM favorites WHERE clothes_id = $1 AND user_id = $2`;
         }
-        const values =[clothes_id, user_id]
+        const values = [clothes_id, user_id]
         const res = await pool.query(text, values);
 
         return res.rows;
