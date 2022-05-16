@@ -9,6 +9,7 @@ module.exports = {
         try {
             return res.rows[0];
         } catch(e) {
+            console.log(e);
             return -1;
         }
     }
