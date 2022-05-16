@@ -16,7 +16,7 @@ module.exports = {
         const text = `SELECT * from clothes WHERE clothes_id = (SELECT clothes_id FROM favorites WHERE user_id = $1)`
         const values = [user_id];
 
-        const res = pool.query(text, values);
+        const res = await pool.query(text, values);
         try {
             return res.rows;
         } catch(e) {
