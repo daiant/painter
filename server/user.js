@@ -13,7 +13,7 @@ module.exports = {
         }
     },
     getFavoritesFromUser: async function(user_id) {
-        const text = `SELECT * from clothes WHERE clothes_id = (SELECT clothes_id FROM favorites WHERE user_id = $1)`
+        const text = `SELECT * from clothes WHERE clothes_id IN (SELECT clothes_id FROM favorites WHERE user_id = $1)`
         const values = [user_id];
 
         const res = await pool.query(text, values);
