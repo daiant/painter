@@ -36,12 +36,13 @@ export default function Product(props) {
             axios.post("/set-favorite", {
                 clothes_id: props.clothes.clothes_id,
                 user_id: auth.auth.user_id,
-                action: !favorite
+                action: favorite
             }).then(({data}) => setFavorite(!favorite))
         }
     }
 
     return <>
+        <div style={{display: 'inline-block'}}>
         <Link to={`/painter/product/${props.clothes.clothes_id}`}>
             <div className={styles.main}>
                 <div className={loading ? `${styles.loading} ${styles.img}` : styles.img}>
@@ -66,5 +67,6 @@ export default function Product(props) {
                 </div>
             </div>
         </Link>
+        </div>
     </>
 }
