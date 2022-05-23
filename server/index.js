@@ -14,7 +14,7 @@ const PORT = process.env.PORT || 8443;
 const app = express();
 
 https.createServer({key: fs.readFileSync('my_cert.key'), cert: fs.readFileSync('my_cert.crt')}, app).listen(PORT, function() {console.log('https ready');});
-
+// hola soy una preuba
 app.use(express.json());
 app.use(cors({credentials: true, origin: 'https://daiant.github.io'})); 
 // app.use(cors());
