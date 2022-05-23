@@ -1,9 +1,9 @@
 const pg = require('pg');
 const credentials = {
-    user: "ldbuhaxbnjbclm", 
+    user: "bwspjcvcbiswyz", 
     host: "ec2-52-30-67-143.eu-west-1.compute.amazonaws.com", 
-    database: "dfl8q82tcv7ret", 
-    password: 'b951be9960529b8abe190494f08244114c90485201249e615dd6e78dc205886f', 
+    database: "ddrfc8p3krbeb9", 
+    password: '1e29548d9fb5baeaa641b8d4f4e6ceb7f8540e8893e732c10300e0921925969e', 
     port: 5432,
     ssl: { 
       rejectUnauthorized: false,
