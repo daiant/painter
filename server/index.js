@@ -21,8 +21,8 @@ app.use(cors({credentials: true, origin: ['https://daiant.github.io', 'http://lo
 
 app.post('/auth', cors(), async (req, res) => {
     
-    const user = await getUser(req.body.user, req.body.pwd);
     if(user !== undefined && user !== {}) {
+        const user = await getUser(req.body.user, req.body.pwd);
         res.json({
             roles: [1],
             accessToken: 1,
