@@ -29,8 +29,13 @@ export default function Home() {
         />
         <Brand 
             src="/painter/springfield.jpg"
-            name="Springfield"
-            id="1"
+            name="Zara"
+            id="9"
+        />
+        <Brand 
+            src="/painter/springfield.jpg"
+            name="Pull & Bear"
+            id="2"
         />
         <section className="most-wanted container">
             <h2>Los más vendidos</h2>

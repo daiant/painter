@@ -22,7 +22,7 @@ export default function Navbar() {
                     <li>
                         <Link to={{
                             pathname: "/painter/find",
-                            search: "?gender=1"
+                            search: "?gender=7"
                         }}>
                             Hombre
                         </Link>
@@ -30,7 +30,7 @@ export default function Navbar() {
                     <li>
                         <Link to={{
                             pathname: "/painter/find",
-                            search: "?gender=5"
+                            search: "?gender=6"
                         }}>
                             Mujer
                         </Link>
@@ -38,7 +38,7 @@ export default function Navbar() {
                     <li>
                         <Link to={{
                             pathname: "/painter/find",
-                            search: "?gender=3"
+                            search: "?gender=15"
                         }}>
                             Niña
                         </Link>

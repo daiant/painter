@@ -56,7 +56,7 @@ export default function Product(props) {
                     <div className={styles.price}>
                         {props.clothes.sale_price && 
                             <div>
-                                <span className={styles.sale}>{`${props.clothes.sale_price}`}</span>
+                                {/* <span className={styles.sale}>{`${props.clothes.sale_price}`}</span> */}
                                 <span className={styles.price}> {`${props.clothes.price.toString().replace(".", ",")} €`}</span>
                             </div>
                         }
