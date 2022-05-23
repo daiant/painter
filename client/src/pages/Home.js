@@ -12,8 +12,9 @@ export default function Home() {
     React.useEffect(() =>  {
         axios.post("/clothes", {max: 8}, {
             headers: {
-                Accept: "application/json",
+                "Accept": "application/json",
                 "Content-Type": "application/json;charset=UTF-8",
+                "Access-Control-Allow-Origin": "*"
             }
         }).then(({data}) => {
             setClothes(data.clothes);
